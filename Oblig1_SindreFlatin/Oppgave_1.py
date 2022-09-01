@@ -1,2 +1,2 @@
 print("Hello world!")           # Her ber jeg programmet ved hjelp av print() vise teksten, eller string'en, "Hello world!".
-                                # Jeg valgte å bruke ", men kunne fint også brukt '.
+                                # Jeg valgte å bruke " i print-funksjonen, men kunne fint også brukt '.
