@@ -24,3 +24,6 @@ elif number < 0:
 else:
     print(f"{number} er hverken positivt, eller negativt.")
 
+print()
+print("----------------------------------------------------------------------------")
+
