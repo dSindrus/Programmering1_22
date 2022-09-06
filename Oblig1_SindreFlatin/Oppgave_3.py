@@ -1,7 +1,10 @@
 # Lag en mini-kalkulator. Ta to tall som input fra brukeren på en fornuftig måte.
 
-tall_1 = int(input()) #Her settes brukerdefinerte tallverdi i utregningen ved hjelp av input og int.
-tall_2 = int(input())
+print(" ")
+tall_1 = int(input("Skriv inn det første tallet her:")) #Her settes brukerdefinerte tallverdi i utregningen ved hjelp av input og int.
+tall_2 = int(input("Skriv inn det andre tallet her:"))
+
+print(" ")
 
 print(f"{tall_1} ganger {tall_2} = {tall_1 * tall_2}")                              # Her ganges de to tallene sammen ved hjelp av operatoren *
 print(f"{tall_1} delt på {tall_2} = {tall_1 / tall_2}")                             # Her deles det første tallet med det andre ved hjelp av operatoren /

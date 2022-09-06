@@ -11,13 +11,26 @@ person_2 = 9
 person_3 = 2.5                  # Her defineres antall småkaker person 1-5 spiser i snitt på en uke
 person_4 = 21
 person_5 = 0
-antall_personer = 5     # Her defineres totalt antall personer.
+antall_personer = 5             # Her defineres totalt antall personer.
 
 antall_kaker = person_1 + person_2 + person_3 + person_4 + person_5     # Her defineres totalt antall kaker spist. kun for å gjøre regnestykket under kortere.
+print("---------------------------------------------------------------------------------------") #unødvendig, lagt inn for ordensskyld
+print("Oversikt over hvor mange småkaker hver person spiser:")
 
-print("Person 1 spiser 5 småkaker, person 2 spiser 9 småkaker, person 3 spiser 2.5 småkaker, person 4 spiser 21 småkaker(jeebus), og person 5 spiser ingen kaker.")
+print(" ")
+
+print("Person 1 spiser 5 småkaker,")
+print("person 2 spiser 9 småkaker,")
+print("person 3 spiser 2.5 småkaker,")
+print("person 4 spiser 21 småkaker(jeebus),")
+print("og person 5 spiser ingen kaker.")
+
 print(" " )
+
 print(f"Totalt antall småkaker spist er: {antall_kaker}")
 print(" ")
-print(f"Antall småkaker de fem personene spiser i gjennomsnitt på en uke er: {int(antall_kaker/antall_personer)}")      #Her regnes gjennomsnittet ut ved hjelp av int.
-print(f"Runder vi ikke ned, er antallet i gjennomsnitt: {float(antall_kaker/antall_personer)}")     #Samme utregning gjort ved bruk av float. Ikke nødvendig, men følte jeg måtte. :-)
+print(f"Antall småkaker de fem personene spiser i gjennomsnitt på en uke er da: {int(antall_kaker/antall_personer)}")       #Her regnes gjennomsnittet ut ved hjelp av dataypen int, og operatoren /.
+                                                                                                                            # int fjerner desimalene, og runder i praksis ned verdien
+print( )
+print("---------------------------------------------------------------------------------------")                            #Unødvending, lagt inn for ordensskyld
+print(f"Runder vi ikke ned, er antallet i gjennomsnitt: {float(antall_kaker/antall_personer)}")                             #Samme utregning, men ved bruk av float. Ikke nødvendig, men følte jeg måtte. :-)
