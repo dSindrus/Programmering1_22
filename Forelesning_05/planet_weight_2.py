@@ -20,14 +20,14 @@ print(f"6 - {planets[5]}")
 print(f"7 - {planets[6]}")
 print(f"8 - {planets[7]}")
 
-planet_number = input("\nPick a planet by typing a number (int): ")
+planet_number = input("\nPick a planet by typing a number (int): ")             #brukerdefinert verdi utifra listen over planeter
 planet_number = int(planet_number)
 
-if planet_number < 1 or planet_number > 8:
+if planet_number < 1 or planet_number > 8:                                      #if-test for å sikre at brukeren har valgt et gyldig tall
     print("The number you entered is outside of the accepted range.")
     exit()
 
-planet_index = planet_number -1
+planet_index = planet_number -1                                                 #
 
 #jordvekt / jordtyngdekraft * planettyngdekraft
 planet_weight = your_weight / planets_gravity[2] * planets_gravity[planet_index]
