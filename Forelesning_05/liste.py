@@ -52,4 +52,4 @@ print(games)
 games.sort(reverse=True)                        #en omvendt sortering, fra Å-A.
 print(games)
 
-print(f"Length of list: {len(games)}")                               #sjekker lengden på lista.
+print(f"Length of list: {len(games)}")          #sjekker lengden på lista.
