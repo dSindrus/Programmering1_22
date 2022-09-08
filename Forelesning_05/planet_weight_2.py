@@ -32,5 +32,5 @@ planet_index = planet_number -1                                                 
 #jordvekt / jordtyngdekraft * planettyngdekraft
 planet_weight = your_weight / planets_gravity[2] * planets_gravity[planet_index]
 
-print(f"Result: {planet_weight} kg ")
+print(f"Your weight on {planets[planet_index]} is: {planet_weight} kg ")
 
