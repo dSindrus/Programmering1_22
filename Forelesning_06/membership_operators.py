@@ -1,6 +1,6 @@
 print(" ")
 
-game_list = ["Disco Elysium", "Hunt: Showdown", "Jump King", "Stardew Valley", "Dark Souls"]
+game_list = ["Disco Elysium", "Hunt: Showdown", "Jump King", "Stardew Valley"]
 
 if "Disco Elysium" in game_list:
     print("Cool!")
