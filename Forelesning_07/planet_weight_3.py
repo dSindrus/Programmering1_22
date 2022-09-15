@@ -24,7 +24,7 @@ while True:
     '''
 
     for index in range(len(planets)):
-        print(f"{index + 1} - {planets[index]}")
+        print(f"{index + 1} - {planets[index]}")            #erstatter listen med kode over. Nyttig!
 
     planet_number = input("\nPick a planet by typing a number (int): ")
     planet_number = int(planet_number)
