@@ -11,6 +11,15 @@ movie['director'] = 'Pete Docter'                           #Oppretter en ny nø
 print(f"Filmen er regissert av {movie.get('director')}")    #henter ut kun nøkkelen vi opprettet over.
 
 print("--------------------------------------------------------------")
+print("--------------------------------------------------------------")
+
+for key in movie:
+    print(f"{key}")                                         #Printer ut nøklene fra et gitt dictionaries
+
+for key, value in movie.items():                            #Printer ut nøkler med verdier fra dictionary'en
+    print(f"{key} - {value}")
+print("--------------------------------------------------------------")
+print("--------------------------------------------------------------")
 
 #.pop() metoden kan brukes til å fjerne en nøkkel.
 #dictionary_name.pop(nøkkel)
