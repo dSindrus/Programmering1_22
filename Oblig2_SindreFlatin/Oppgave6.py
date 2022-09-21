@@ -1,7 +1,7 @@
 print("-------------------------------------")
 
 pakkelista = []
-handling = int
+handling = str
 
 while handling != "4":
     handling = input("Pakkelisten! Hva vil du gjøre?\n1) Legge til noe? \n2) Fjerne noe? \n3) Se lista \n4) Avslutte.\nSvar med et tall her:")
