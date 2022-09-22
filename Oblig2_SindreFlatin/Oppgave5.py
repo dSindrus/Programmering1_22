@@ -1,5 +1,5 @@
 print("-------------------------------------")
-#1.
+#1 og #2
 import random
 antall_deltagere = int(input("Spill dart! \nHvor mange skal spille dart?:"))        #brukerbestemt antall deltagere
 antall_kast = 3                                                                     #definerer antall kast
