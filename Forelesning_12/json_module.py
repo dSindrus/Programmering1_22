@@ -19,5 +19,4 @@ def load_json(filename):
         print("File content is not JSON")
 
     else:
-        print(dict_from_file)  # Printer filen
-        print(dict_from_file["name"])
+        return dict_from_file
