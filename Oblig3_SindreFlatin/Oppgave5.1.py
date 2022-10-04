@@ -20,12 +20,15 @@ Nobody = {"name": "Mr. Nobody", "year": 2009, "imdb-rating": 7.8}
 
 new_movie_list = [Snatch, Shawshank, Nobody]
 
-def added_movies(movie_list):
-    for movies in movie_list:
+def added_movies():
+    for movies in new_movie_list:
         movie_list.append(new_movie_list)
 
 added_movies(movie_list)
 
 print("-----------------------------")
 
+#C)
+
+'''OPPGAVE 5.1 (C)'''
 
