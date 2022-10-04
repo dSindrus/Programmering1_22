@@ -14,6 +14,7 @@ def volum_utregning(antall_utregninger):
         print("------------------------")           #pynt
         print(f"Med lengde: {lengde}cm\n bredde: {bredde}cm\n og høyde: {høyde}cm\n er volumet: {volum}cm^3")   #printer ut de tilfeldige verdiene med tilhørende resultat hver gang funksjonen kjører.
 
+
 volum_utregning(antall_utregninger)                                                                             #Printer ut et definert antall funksjoner, med forskjellige verdier og resultat.
 
 print("------------------------")           #pynt
