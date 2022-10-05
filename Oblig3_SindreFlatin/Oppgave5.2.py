@@ -1,4 +1,4 @@
-print("---------------------------")
+#print("---------------------------")
 
 Inception = {"name": "Inception", "year": 2010, "rating": 8.7}
 InsideOut = {"name": "Inside Out", "year": 2015, "rating": 8.1}                    #Definerer 3 dictionaries med data om hver sin film
@@ -22,7 +22,7 @@ add_movie(movie_list, "Kopps", 2003, )                                          
 
 #print(list(movie_list))
 
-'''Oppgave 5.2'''
+'''-----------------Oppgave 5.2-----------------'''
 #A)
 print("-----------------------------")
 
@@ -30,7 +30,7 @@ def print_movies(name,year,rating):
     for dictionary in movie_list:
         print(f"{dictionary[name]} - {dictionary[year]} has a rating of {dictionary[rating]}")
 
-print_movies('name', 'year', 'rating')                                              #
+print_movies('name', 'year', 'rating')
 
 print("-----------------------------")
 
@@ -41,6 +41,25 @@ def avarage_rating(list, rating):
         sum_rating = 0.0
         for verdi in movie_list:
             sum_rating += verdi['rating']
-        return round(sum_rating / len(movie_list), 2)
+        return round(sum_rating / len(movie_list), 2)                   #regnestykke med ", 2" på slutten for å få to desimaler.
 
-print(avarage_rating('list', 'rating'))
+print("Gjennomsnittsratingen er" , avarage_rating('list', 'rating'))
+
+print("-----------------------------")
+
+#C)
+
+
+def film_år(name,year):
+    for dictionary in movie_list:
+        if dictionary['year'] >= year:
+            print(f"{dictionary['name']} - {dictionary['year']} has a rating of {dictionary['rating']}")
+
+film_år(movie_list, 2010)
+
+
+
+
+
+
+
