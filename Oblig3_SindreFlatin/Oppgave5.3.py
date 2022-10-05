@@ -40,5 +40,6 @@ def read_from_file(my_movies):
     f = open("my_movies.txt", "r")
     print(f.read())                                     #åpner filen, og printer så innholdet i konsollen.
 
+
 read_from_file("my_movies.txt")                         #Kjører funksjonen, som resulterer i en print av filens innhold.
 
