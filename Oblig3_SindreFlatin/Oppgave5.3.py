@@ -28,17 +28,17 @@ add_movie(movie_list, "Kopps", 2003, )                                          
 
 
 def list_to_file(filename):
-    f = open("my_movies.txt", "w")
+    file = open("my_movies.txt", "w")                                                          #Oppretter, eller åpner, filen ved hjelp av open
     for filmer in filename:
-        f.write(f"{filmer['name']} - {filmer['year']} has a rating of {filmer['rating']}\n")
-    f.close()
+        file.write(f"{filmer['name']} - {filmer['year']} has a rating of {filmer['rating']}\n")     #Skriver dataen fra de forskjellige nøklene i dictionary'en til fil
+    file.close()
 
 list_to_file(movie_list)
 
 #B)
 def read_from_file(my_movies):
     f = open("my_movies.txt", "r")
-    print(f.read())
+    print(f.read())                                     #åpner filen, og printer så innholdet i konsollen.
 
-read_from_file("my_movies.txt")
+read_from_file("my_movies.txt")                         #Kjører funksjonen, som resulterer i en print av filens innhold.
 
