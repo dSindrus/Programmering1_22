@@ -30,4 +30,6 @@ print(student_1.age)
 
 print("-----------------------------")
 
-print(student_1.get_description())
+print(student_1.get_description())                  #Henter metoden get_description fra modulen
+print("--------")
+print(student_2.get_description())

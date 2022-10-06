@@ -6,7 +6,7 @@ class Student:
         self.student_id = student_id
 
     def get_description(self):
-        return f"The students name is:" \
+        return f"The students name is: " \
                f"{self.firstname} {self.lastname}" \
-               f", is {self.age} years old with student id" \
+               f", is {self.age} years old with student id: " \
                f"{self.student_id}"
