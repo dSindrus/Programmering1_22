@@ -3,15 +3,53 @@ print("--------------------------")
 import random
 import blackjack_module as bjm
 
+#1.1)
+
+deck = bjm.get_new_shuffled_deck()
 player_hand = []
 dealer_hand = []
-game_deck = bjm.full_deck
 
-def get_player_hand():
-    bjm.get_new_shuffled_deck()
+def deal_cards():
+    player_hand.append(random.choice(list(deck)))
+    deck.remove(player_hand[0])
+    player_hand.append(random.choice(list(deck)))
+    deck.remove(player_hand[1])
 
-card1 = random.randrange(game_deck)
-card2 =
+    dealer_hand.append(random.choice(list(deck)))
+    deck.remove(dealer_hand[0])
+    dealer_hand.append(random.choice(list(deck)))
+    deck.remove(dealer_hand[1])
+
+    player_score = bjm.calculate_hand_value(player_hand)
+    dealer_score = bjm.calculate_hand_value(dealer_hand)
+
+    print(player_score)
+    print(dealer_score)
+
+    print(f"The cards have been dealt. You have a {player_hand[0]}  and a {player_hand[1]} with a total value of {player_score}")
+    print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
+
+deal_cards()
+
+player_score = bjm.calculate_hand_value(player_hand)
+dealer_score = bjm.calculate_hand_value(dealer_hand)
+
+#1.2 A)
+
+if player_score == 21:
+    print("Blackjack! You won.")
+#1.2 B)
+else:
+    input("Do u want to 1. Hit or 2. Stand?:")
+    if input() == "Hit":
+        player_hand.append(random.choice(list(deck)))
+        deck.remove(player_hand)
+        print("You chose to Hit!")
+    elif input == "Stand":
+        print("You chose to stand!")
+        deal_cards()
+    else:
+        exit()
 
 
 
