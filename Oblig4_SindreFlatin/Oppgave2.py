@@ -26,6 +26,8 @@ def deal_cards():
     print(player_score)
     print(dealer_score)
 
+    print("-------------------------------")
+
     print(f"The cards have been dealt. You have a {player_hand[0]}  and a {player_hand[1]} with a total value of {player_score}")
     print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
 
@@ -37,15 +39,19 @@ dealer_score = bjm.calculate_hand_value(dealer_hand)
 #1.2 A)
 
 if player_score == 21:
+    print("-------------------------------")
     print("Blackjack! You won.")
 #1.2 B)
 else:
-    input("Do u want to 1. Hit or 2. Stand?:")
-    if input() == "Hit":
+    print("-------------------------------")
+    player_input = input("Do u want to 1. Hit or 2. Stand?:")
+    print("-------------------------------")
+    if player_input == "Hit":
         player_hand.append(random.choice(list(deck)))
         deck.remove(player_hand)
         print("You chose to Hit!")
-    elif input == "Stand":
+        print(player_hand)
+    elif player_input == "Stand":
         print("You chose to stand!")
         deal_cards()
     else:
