@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52b05eb8-8a59-4112-b553-85c5b778207b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Forelesning_17.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/.idea/Forelesning16.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forelesning16/viewport.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/elements.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
