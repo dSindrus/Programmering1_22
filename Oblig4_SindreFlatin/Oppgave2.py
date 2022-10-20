@@ -1,4 +1,4 @@
-print("--------------------------")
+print("-------------------------------")
 
 import random
 import blackjack_module as bjm
@@ -8,6 +8,7 @@ import blackjack_module as bjm
 deck = bjm.get_new_shuffled_deck()
 player_hand = []
 dealer_hand = []
+
 
 def deal_cards():
     player_hand.append(random.choice(list(deck)))
@@ -27,81 +28,67 @@ def deal_cards():
     print(dealer_score)
 
     print("-------------------------------")
-
-    print(f"The cards have been dealt. You have a {player_hand[0]}  and a {player_hand[1]} with a total value of {player_score}")
+    print("Welcome to a game of blackjack!")
+    print("-------------------------------")
+    print(f"The cards have now been dealt. \nYou have a {player_hand[0]} and a {player_hand[1]} with a total value of {player_score}")
     print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
+
 
 deal_cards()
 
 player_score = bjm.calculate_hand_value(player_hand)
 dealer_score = bjm.calculate_hand_value(dealer_hand)
 
-#1.2 A)
 
-if player_score == 21:
-    print("-------------------------------")
-    print("Blackjack! You won.")
-#1.2 B)
-else:
-    print("-------------------------------")
-    player_input = input("Do u want to 1. Hit or 2. Stand?:")
-    print("-------------------------------")
-    if player_input == "Hit":
-        player_hand.append(random.choice(list(deck)))
-        deck.remove(player_hand)
-        print("You chose to Hit!")
-        print(player_hand)
-    elif player_input == "Stand":
-        print("You chose to stand!")
-        deal_cards()
-    else:
+def print_results(player_score, dealer_score):
+    if dealer_score > 21:
+        print(f"Dealer's hand is {dealer_hand} with a value of {dealer_hand}")
+        print("You win!")
+    if player_score > 21:
+        print(f"Your hand is {player_hand} with a value of {player_score}")
+        print("Busted! You got more than 21\nDealer wins!.")
+    elif player_score > dealer_score and dealer_score > 22:
+        print(f"Your hand is {player_hand} with a value of {player_score}")
+        print(f"Dealer's hand is {player_hand} with a value of {dealer_score}")
+        print("You wins!")
+    elif dealer_score > player_score and player_score > 22:
+        print(f"Your hand is {player_hand} with a value of {player_score}")
+        print(f"Dealer's hand is {player_hand} with a value of {dealer_score}")
+        print("Dealer wins!")
+    elif player_score == dealer_hand:
+        print(f"Your hand is {player_hand} with a value of {player_score}")
+        print(f"Dealer's hand is {dealer_hand} with a value of {dealer_score}")
+        print("Equal score, no winners!")
+
+#1.2 A)
+while True: #player_score < 22 and dealer_score < 22:
+
+    if player_score == 21:
+        print("--------------------------------")
+        print("Blackjack! You won.")
         exit()
 
+#1.2 B,C,D)
+    else:
+        print("--------------------------------")
+        player_input = input("Do u want to:\n1. Hit \n2. Stand:")
+        print("-------------------------------")
+        if player_input == "Stand":                                 #NOTETOSELF; Stand gjør pr. nå ingenting. 19.10
+            print("You chose to stand!")
+            print_results(player_score, dealer_score)
+
+        elif player_input == "Hit":
+            print("You chose to Hit!")
+            player_hand.append(random.choice(list(deck)))
+            deck.remove(player_hand[-1])
+            player_score = bjm.calculate_hand_value(player_hand)
+            print_results(player_score, dealer_score)
+
+        elif player_score < 21:
+            print(f"You now have {player_hand}  with a value of {player_score}")
+            print("Busted, u loose!\n You have a score of more than 21.")
 
 
-
-
-
-'''play_blackjack = input("Do you want to play a game of blackjack?"):
-while play_blackjack != "Nei":'''
-
-
-
-'''def kort_stokk():
-    kort_verdi = ["Ess","To","Tre","Fire","Fem","Seks","Sju","Åtte","Ni","Ti","Knekt","Dame","Konge"]
-    kort_symbol = ["Hjerte", "Ruter", "Spar","Kløver"]
-    stokk = []
-    for symbol in kort_symbol:
-        for kort in kort_verdi:
-            stokk.append(kort + "i" + symbol)
-        return stokk
-
-def kort_verdi():
-    if kort[:1] in ("Knekt","Dame","Konge", "Ess"):
-        return int(10)
-    elif kort[:1] in ("Ess","To","Tre","Fire","Fem","Seks","Sju","Åtte","Ni","Ti"):
-        return int(kort[:1])
-    elif kort[:1] == "Ess"
-        print(str(kort))
-        verdi = input("Vil du at dette skal være 1, eller 11?")
-        while verdi != "1" or verdi != "11":
-            if verdi == "1":
-                return int(1)
-            elif verdi == "11":
-                return int(11)
-            else
-                verdi = input("Vil du at dette skal være 1, eller 11?")
-
-
-def ny_kortstokk(stokk):
-    return stokk(random.randint(0,len(stokk)-1))
-
-def slett_kort (stokk, kort):
-    return stokk.remove(kort)
-
-spill_blackjack = ipnut("Vil du spille en runde blackjack?"):
-while spill_blackjack != "Nei":
-    korthånd = ny_kortstokk()
-    kort1 = nytt_kort(ny_kortstokk(korthånd))
-    slett_kort(ny_kortstokk(kort1))
-    kort2 = ny_kortstokk(korthånd)'''
+            deal_cards()
+        else:
+            exit()

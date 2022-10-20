@@ -1,4 +1,5 @@
 import random
+#import Oppgave2 as main
 
 full_deck = {"Two of clubs": 2, "Three of clubs": 3, "Four of clubs": 4, "Five of clubs": 5, "Six of clubs": 6,
              "Seven of clubs": 7, "Eight of clubs": 8, "Nine of clubs": 9, "Ten of clubs": 10,
@@ -25,7 +26,7 @@ def get_new_shuffled_deck():
 def get_card_value(card):
     return full_deck[card]
 
-
+#1.5) Ess som 1, eller 11.
 def calculate_hand_value(hand):
     hand_value = 0
     for card in hand:
