@@ -50,7 +50,7 @@ def print_results(player_score, dealer_score):
     elif player_score > dealer_score and dealer_score > 22:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"Dealer's hand is {player_hand} with a value of {dealer_score}")
-        print("You wins!")
+        print("You win!")
     elif dealer_score > player_score and player_score > 22:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"Dealer's hand is {player_hand} with a value of {dealer_score}")
