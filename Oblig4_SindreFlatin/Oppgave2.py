@@ -6,8 +6,7 @@ import blackjack_module as bjm
 deck = bjm.get_new_shuffled_deck()
 player_hand = []
 dealer_hand = []
-player_input = ""
-
+player_input = "x"
 
 def deal_cards():
     player_hand.append(random.choice(list(deck)))
@@ -62,15 +61,16 @@ def print_results_hit(player_score, dealer_score):
     if player_score > 21:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
-    if player_score > dealer_score and dealer_score < 22:
+    if player_score > dealer_score: #and dealer_score < 22:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
-    if dealer_score > player_score and player_score < 22:
+    if dealer_score > player_score: #and player_score < 22:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
     if player_score == dealer_score:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"The dealers visible card is a {dealer_hand[0]}, with a value of {bjm.get_card_value(dealer_hand[0])}")
+
 
 deal_cards()
 
@@ -101,28 +101,25 @@ while True:
                 deck.remove(player_hand[-1])
                 player_score = bjm.calculate_hand_value(player_hand)
                 print_results_hit(player_score, dealer_score)
-                if player_score > 21:
-                    print(f"You now have {player_hand}  with a value of {player_score}")
-                    print("Busted, u loose!\n You have a score of more than 21.")
-                    exit()
+            '''if player_score > 21:
+                print(f"You now have {player_hand}  with a value of {player_score}")
+                print("Busted, u loose!\n You have a score of more than 21.")
+                exit()'''
 
-            elif player_input == "3":
+            if player_input == "3":
                 print("Goodbye!")
                 exit()
 
-        if player_input == "2":                                 #NOTETOSELF; Stand gjør pr. nå ingenting. 19.10
-            print("You chose to stand!")
-            print("-------------------------------")
-            player_score = bjm.calculate_hand_value(player_hand)
-            dealer_score = bjm.calculate_hand_value(dealer_hand)
-            while dealer_score < 17:
-                dealer_hand.append(random.choice(list(deck)))
-                deck.remove(dealer_hand[-1])
+            elif player_input == "2":                                 #NOTETOSELF; Stand gjør pr. nå ingenting. 19.10
+                print("You chose to stand!")
+                print("-------------------------------")
+                player_score = bjm.calculate_hand_value(player_hand)
                 dealer_score = bjm.calculate_hand_value(dealer_hand)
-                print_results_stand(player_score, dealer_score)
+                while dealer_score < 17:
+                    dealer_hand.append(random.choice(list(deck)))
+                    deck.remove(dealer_hand[-1])
+                    dealer_score = bjm.calculate_hand_value(dealer_hand)
+                    print_results_stand(player_score, dealer_score)
 
                 #stand_input = input("Do you want to play another round? \n1. Yes \n 2. No:")
-                #while stand_input "1":
-
-        while False:
-            exit()
+                #while stand_input != "x":
