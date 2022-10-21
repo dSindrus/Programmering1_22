@@ -1,5 +1,3 @@
-print("-------------------------------")
-
 import random
 import blackjack_module as bjm
 
@@ -8,7 +6,7 @@ import blackjack_module as bjm
 deck = bjm.get_new_shuffled_deck()
 player_hand = []
 dealer_hand = []
-
+player_input = ""
 
 
 def deal_cards():
@@ -25,8 +23,8 @@ def deal_cards():
     player_score = bjm.calculate_hand_value(player_hand)
     dealer_score = bjm.calculate_hand_value(dealer_hand)
 
-    print(player_score)
-    print(dealer_score)
+    #print(player_score)     #Hadde denne her kun for å bekrefte at det fungerte i starten.
+    #print(dealer_score)     #Hadde denne her Kun for å bekrefte at det fungerte i starten.
 
     print("-------------------------------")
     print("Welcome to a game of blackjack!")
@@ -43,15 +41,15 @@ def print_results_stand(player_score, dealer_score):
     if player_score > 21:
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print("Busted! You got more than 21\nDealer wins!.")
-    if player_score > dealer_score and dealer_score < 22:
+    if player_score > dealer_score and dealer_score < 22:                               #Her fant jeg ut at jeg hadde feil tegnsetting etter "and dealer_score"
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"Dealer's hand is {player_hand} with a value of {dealer_score}")
         print("You win!")
-    if dealer_score > player_score and player_score < 22:
+    if dealer_score > player_score and player_score < 22:                               #Her fant jeg ut at jeg hadde feil tegnsetting etter "and dealer_score"
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"Dealer's hand is {player_hand} with a value of {dealer_score}")
         print("Dealer wins!")
-    if player_score == dealer_score:
+    if player_score == dealer_score:                                                    #Og her fant jeg ut at jeg hadde feil variabel i statement'en. Jeg hadde først dealer_hand. Det var svært frustrerende.
         print(f"Your hand is {player_hand} with a value of {player_score}")
         print(f"Dealer's hand is {dealer_hand} with a value of {dealer_score}")
         print("Equal score, no winners!")
@@ -97,24 +95,30 @@ while True:
     #1.2 B,C,D)
     else:
         print("--------------------------------")
-        player_input = input("Do u want to:\n1. Hit \n2. Stand \n3. Exit:")
-        print("-------------------------------")
-        if player_input == "1":
-            print("You chose to Hit!")
+        while player_input != "3":
+            player_input = input("Do u want to:\n1. Hit \n2. Stand \n3. Exit:")
             print("-------------------------------")
-            player_hand.append(random.choice(list(deck)))
-            deck.remove(player_hand[-1])
-            player_score = bjm.calculate_hand_value(player_hand)
-            print_results_hit(player_score, dealer_score)
+            if player_input == "1":
+                print("You chose to Hit!")
+                print("-------------------------------")
+                player_hand.append(random.choice(list(deck)))
+                deck.remove(player_hand[-1])
+                bjm.calculate_hand_value(player_hand)
+                dealer_hand.append(random.choice(list(deck)))
+                deck.remove(dealer_hand[-1])
+                bjm.calculate_hand_value(dealer_hand)
+                print_results_hit(player_score, dealer_score)
 
-        elif player_input == "2":                                 #NOTETOSELF; Stand gjør pr. nå ingenting. 19.10
-            print("You chose to stand!")
-            print("-------------------------------")
-            print_results_stand(player_score, dealer_score)
+            if player_input == "2":                                 #NOTETOSELF; Stand gjør pr. nå ingenting. 19.10
+                print("You chose to stand!")
+                print("-------------------------------")
+                bjm.calculate_hand_value(player_hand)
+                bjm.calculate_hand_value(dealer_hand)
+                print_results_stand(player_score, dealer_score)
 
-        elif player_input == "3":
-            print("Goodbye!")
-            exit()
+            elif player_input == "3":
+                print("Goodbye!")
+                exit()
 
-        else:
+        while False:
             exit()
