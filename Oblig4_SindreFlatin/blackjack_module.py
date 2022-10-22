@@ -32,15 +32,16 @@ def get_card_value(card):
 
 
 '''def calculate_ace_player(player_hand, player_score):
-    for card in player_hand:
-        if card["name"] == "Ace" and player_score > 21:
+    for full_deck.keys("ace") in player_hand:
+        if player_score > 21:
             card.update({"value": 1})
 
 
 def calculate_ace_dealer(dealer_hand, dealer_score):
-    for card in dealer_hand:
-        if card["name"] == "Ace" and hand_value > 21:
-            card.update({"value": 1})'''
+    for full_deck.items() in dealer_hand:
+        for key, value in full_deck.items():
+            if key == "Ace" and dealer_score > 21:
+                value.update({value: 1})'''
 
 #1.5) Ess som 1, eller 11.
 
@@ -48,6 +49,9 @@ def calculate_ace_dealer(dealer_hand, dealer_score):
 def calculate_hand_value(hand):
     hand_value = 0
     for card in hand:
-        hand_value += get_card_value(card)
+        if "ace" in card and get_card_value(card) >= 11:
+            hand_value += get_card_value(card)
+            hand += 1
+        else:
+            hand_value += get_card_value(card)
     return hand_value
-
