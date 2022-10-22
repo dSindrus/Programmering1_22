@@ -1,5 +1,6 @@
 import random
 
+
 full_deck = {"Two of clubs": 2, "Three of clubs": 3, "Four of clubs": 4, "Five of clubs": 5, "Six of clubs": 6,
              "Seven of clubs": 7, "Eight of clubs": 8, "Nine of clubs": 9, "Ten of clubs": 10,
              "Jack of clubs": 10, "Queen of clubs": 10, "King of clubs": 10, "Ace of clubs": 11,
@@ -14,7 +15,11 @@ full_deck = {"Two of clubs": 2, "Three of clubs": 3, "Four of clubs": 4, "Five o
              "Seven of spades": 7, "Eight of spades": 8, "Nine of spades": 9, "Ten of spades": 10,
              "Jack of spades": 10, "Queen of spades": 10, "King of spades": 10, "Ace of spades": 11,
              }
-
+deck_aces = {"Ace of spades": 11,
+            "Ace of hearts": 11,
+            "Ace of diamonds": 11,
+            "Ace of clubs": 11,
+}
 
 def get_new_shuffled_deck():
     deck = list(full_deck.keys())
@@ -25,10 +30,8 @@ def get_new_shuffled_deck():
 def get_card_value(card):
     return full_deck[card]
 
-#1.5) Ess som 1, eller 11.
 
-
-def calculate_ace_player(player_hand, player_score):
+'''def calculate_ace_player(player_hand, player_score):
     for card in player_hand:
         if card["name"] == "Ace" and player_score > 21:
             card.update({"value": 1})
@@ -36,8 +39,10 @@ def calculate_ace_player(player_hand, player_score):
 
 def calculate_ace_dealer(dealer_hand, dealer_score):
     for card in dealer_hand:
-        if card["name"] == "Ace" and dealer_score > 21:
-            card.update({"value": 1})
+        if card["name"] == "Ace" and hand_value > 21:
+            card.update({"value": 1})'''
+
+#1.5) Ess som 1, eller 11.
 
 
 def calculate_hand_value(hand):
@@ -45,3 +50,4 @@ def calculate_hand_value(hand):
     for card in hand:
         hand_value += get_card_value(card)
     return hand_value
+
