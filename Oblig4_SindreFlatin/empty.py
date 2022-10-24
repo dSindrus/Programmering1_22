@@ -41,3 +41,35 @@ def calculate_hand_value(hand):
         if "ace" in card and hand_value >= 21:
             hand += 1
     return hand_value
+
+
+choice_input = input("Do you want to play another round? \n1. Yes \n2. No \nAnswer: ")
+if choice_input == "1":
+    chip_stack = bet + chip_stack
+    print(f"You now have {chip_stack} chips")
+    bet = int(input("How many chips do you want to bet? \nBet:"))
+    player_hand = []
+    player_score = 0
+    dealer_hand = []
+    dealer_score = 0
+    deck = bjm.get_new_shuffled_deck()
+    deal_cards()
+
+if chip_stack == 0:
+    print("You're out of chips!")
+    choice_input = input("Do you want to restart the game? \n1. Yes \n2. No \nAnswer: ")
+    if choice_input == "1":
+        player_hand = []
+        player_score = 0
+        dealer_hand = []
+        dealer_score = 0
+        deck = bjm.get_new_shuffled_deck()
+        bet = int(input("How many chips do you want to bet? \nBet:"))
+        deal_cards()
+    if choice_input == "2":
+        print("Goodbye!")
+        exit()
+
+if choice_input == "2":
+    print("Goodbye!")
+    exit()

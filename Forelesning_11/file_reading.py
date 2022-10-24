@@ -5,7 +5,7 @@ print(file.read())
 
 file.close()'''
 
-try:                                                            #Sjekker filnavnet stemmer ved hjel av try og except.
+try:                                                            #Sjekker filnavnet stemmer ved hjelp av try og except.
     with open("text_files/zen_of_python.txt") as file:          #henter og åpner fil ved hjelp av with <åpne fil> as file:.
         print(file.read())
 except FileNotFoundError:
