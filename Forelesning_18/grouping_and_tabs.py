@@ -4,7 +4,7 @@ dpg.create_context()
 dpg.create_viewport(title="Positioning", width=700, height=500)
 
 with dpg.window(no_title_bar=True, width=700, height=500):
-    
+
     with dpg.tab_bar():                                             #Oppretter en "tab-bar"
         with dpg.tab(label="Content1"):                             #Oppretter en tab
             dpg.add_text("OVERSKRIFT")
