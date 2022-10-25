@@ -14,6 +14,15 @@ with dpg.window(no_title_bar=True, width=700, height=500):
 
     with dpg.child_window(width=-1, height=-1):
         dpg.add_text("Other content")
+        dpg.add_text("Other content")
+        dpg.add_text("Other content")
+        dpg.add_text("Other content")
+
+    dpg.add_text("Other content")
+    dpg.add_text("Other content")
+    dpg.add_text("Other content")
+    dpg.add_text("Other content")
+
 
 dpg.setup_dearpygui()
 dpg.show_viewport()
