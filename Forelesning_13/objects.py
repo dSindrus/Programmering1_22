@@ -7,6 +7,7 @@ college_module.Student
 '''
 
 from college_module import Student
+from college_module import Person
 
 student_1 = Student("Ola", "Nordmann", 25, 123456)
 print(student_1.firstname)
@@ -33,3 +34,6 @@ print("-----------------------------")
 print(student_1.get_description())                  #Henter metoden get_description fra modulen
 print("--------")
 print(student_2.get_description())
+
+Person1 = Person("Sindre", "Flatin", 28, "Teamleder")
+print(Person1.hent_info())
