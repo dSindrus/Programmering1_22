@@ -14,3 +14,17 @@ with dpg.child_window(tag="main", height=200, width=-1):  # width = -1 setter br
             dpg.add_input_text(tag="input", multiline=True, height=-1, width=-1)
 with dpg.child_window(tag="terminal", height=-1, width=-1):
     dpg.add_text("Terminal")
+
+
+'''class Movie:
+    def __init__(self, title, genre, year, score):
+        self.title = str(title)
+        self.genre = str(genre)
+        self.year = str(year)
+        self.score = float(score)
+
+    def get_description(self):
+        return f"The movie name is " \
+               f"{self.title}, from the genre {self.genre}" \
+               f". It was produced in {self.year} and has a IMDB-score of " \
+               f"{self.score}"'''
