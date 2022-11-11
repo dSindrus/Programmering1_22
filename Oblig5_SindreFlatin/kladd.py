@@ -16,12 +16,12 @@ with dpg.child_window(tag="terminal", height=-1, width=-1):
     dpg.add_text("Terminal")
 
 
-'''class Movie:
+class Movie:
     def __init__(self, title, genre, year, score):
-        self.title = str(title)
-        self.genre = str(genre)
-        self.year = str(year)
-        self.score = float(score)
+        self.title = title
+        self.genre = genre
+        self.year = year
+        self.score = score
 
     def get_description(self):
         return f"The movie name is " \
