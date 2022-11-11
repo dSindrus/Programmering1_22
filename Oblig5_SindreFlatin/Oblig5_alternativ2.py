@@ -8,9 +8,7 @@ movie_list = []
 favorite_movie = {}
 
 
-
 def add_movie():
-
     movie_title = dpg.get_value("input_movie_name")
     movie_genre = dpg.get_value("input_movie_genre")                                    #Mulig å ha rullgardin-meny her?
     movie_year = dpg.get_value("input_movie_year")
@@ -39,7 +37,7 @@ def random_movie():
 
 
 dpg.create_context()
-dpg.create_viewport(title="PyCharm", width=800, height=600)
+dpg.create_viewport(title="PyCharm", width=600, height=550)
 
 with dpg.window(no_title_bar=True, tag="window"):
     dpg.add_text("Favorite movies")
@@ -49,7 +47,7 @@ with dpg.window(no_title_bar=True, tag="window"):
 
     with dpg.group(horizontal=True):
         dpg.add_text("Movie genre: ")
-        dpg.add_listbox(("Action", "Comedy", "Sci-Fi", "Horror", "Drama", "Crime", "Thriller", "Adventure", "Romance"), num_items = 5,tag="input_movie_genre", width=150)
+        dpg.add_listbox(("Action", "Comedy", "Sci-Fi", "Horror","Crime", "Drama", "Fantasy", "Thriller", "Adventure", "Romance"), num_items = 5,tag="input_movie_genre", width=150)
 
     with dpg.group(horizontal=True):
         dpg.add_text("Movie year: ")
@@ -62,7 +60,7 @@ with dpg.window(no_title_bar=True, tag="window"):
     dpg.add_button(label="Add item", callback=add_movie)
     dpg.add_button(label="Delete items", callback=delete_all_items)
 
-    with dpg.child_window(tag="list_view", height=200, width=270):
+    with dpg.child_window(tag="list_view", height=225, width=350):
         #dpg.add_listbox([favorite_movie], num_items=10, tag="list_view_list", width=250)
         dpg.add_text("Movie list here!")
     dpg.add_button(label="Choose a random movie", callback=random_movie)    #Skal velge en tilfeldig film.
